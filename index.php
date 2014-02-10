@@ -3,8 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="initial-scale=1.0">
-
-<title>HERO index</title>
+<meta name="description" content="รวบรวมประสบการณ์ดีๆ จากประสบการณ์ในการ trade หุ้น ให้ได้อ่านเป็นประสบการณ์ในการเล่น มือใหม่ควรอ่านเพื่อจะได้มีความเข้าใจในการ trade มากขึ้น">
+<meta name="keywords" content="feed , stock , trade , หุ้น , blank" />
+<link rel="icon" href="http://www.gravatar.com/avatar/e8136c5cd59ab1348af1e8af3755c9e1.png" type="image/x-icon" />
+<title>Abstract Feed Stock Trade </title>
 
 <!-- BEGIN HEADER INCLUDE -->
 <?php include "includes/page-header.php" ;?>
@@ -61,13 +63,14 @@ if ( file_exists( 'config.php' ) )
 		<!-- END SLIDER -->
 		
 		<!-- BEGIN TITLE -->
-		<h1 class="post-title">Welcome to 'HERO'</h1>
+		<h1 class="post-title">Welcome to Feed Credit by <a href="https://www.facebook.com/OutOfMyMindOnValueInvestment">Facebook</a> </h1>
 		<!-- END TITLE -->
 
 		<!-- BEGIN CONTENT -->
 
 		<?php  
 		$ci_db->order_by( 'id_content', 'asc' );
+		$ci_db->limit(20);
 		$query = $ci_db->get( 'fb_content' );
 		$show_data = $query->result();
 

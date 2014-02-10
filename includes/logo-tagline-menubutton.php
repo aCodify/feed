@@ -8,7 +8,7 @@
 </div>
 <!-- END LOGO -->
 
-<!-- BEGIN TAGLINE --><div class="tagline">A no-nonsense mobile template, by Bonfire.</div><!-- END TAGLINE -->
+<!-- BEGIN TAGLINE --><div class="tagline">Abstract Mobile Feed Stock Trade</div><!-- END TAGLINE -->
 
 <!-- BEGIN MENU BUTTON --><div id="menu-button"></div><!-- END MENU BUTTON -->
 
