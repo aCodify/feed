@@ -24,6 +24,17 @@
 <?php include "includes/menu.php" ;?>
 <!-- END MENU INCLUDE -->
 
+<?php  
+
+if ( file_exists( 'config.php' ) ) 
+{
+    require 'config.php';
+}
+
+?>
+
+
+<?php require 'connect_database.php'; ?>
 </ul></div></div>
 <!-- END MAIN MENU -->
 
@@ -54,65 +65,27 @@
 		<!-- END TITLE -->
 
 		<!-- BEGIN CONTENT -->
-		<div class="entry-content">
-		<p>
-		Hello there and many thanks for showing interest in 'HERO'! This template is based on one of ThemeForest's highest-rated mobile WordPress themes (it is only surpassed by Spartan, another one of Bonfire's creations), and makes setting up your site an utter breeze.
-		</p>
+
+		<?php  
+		$ci_db->order_by( 'id_content', 'asc' );
+		$query = $ci_db->get( 'fb_content' );
+		$show_data = $query->result();
+
+
+		?>
+
+
+		<?php foreach ( $show_data as $key => $value ): ?>
+			
+			<div class="entry-content">
 		
-		<p>
-		Unlike some other templates, 'HERO' allows for <strong>super fast editing</strong> of your site thanks to the use of includes. For example, need to add an item to the menu? No need to go through the dull task of making the change on every single page on your site; simply edit a dedicated menu file to apply the change. <strong>You'll be making site-wide changes in seconds</strong>. Literally.
-		</p>
-		
-		<p>
-		'HERO' is also a carefully coded template (<strong>HTML5 and CSS3 validated</strong>) with different sections of each page clearly commented. That alone will massively reduce the time it takes for you set up the site and make changes afterwards.
-		</p>
-		
-		<p>
-		Once you make the purchase, you'll immediately have access to both this demo site's files as well as a secondary set of pages which display blocks of code below each content element; to set up your site, you can just copy-paste blocks of code where you want, all without having to dig around in the code to figure out how the template is built.
-		</p>
-		
-		<p>
-		Additionally, there's documentation that includes straightforward instructions on how to set up the menu etc.
-		</p>
-		
-		<p>
-		'HERO' is also <strong>thoroughly tested</strong> and is well acquainted with <strong>iOS</strong>, <strong>Android</strong> and <strong>Windows devices</strong>, plus even desktop browsers (<strong>Chrome, Firefox, Safari, Internet Explorer, Opera</strong>).
-		</p>
-		
-		<p>
-		And finally, should you need a quick question answered, we'll be here for you. As with people who've purchased our previous themes can attest to, our support is to die for. Here's what some of our clients have to say about Bonfire Themes:
-		</p>
-		
-		<ul>
-			<li>"This is by far the best support I've gotten on TF."</li>
-			<li>"Excellent theme, fantastic support ... You have solved my mobile headache."</li>
-			<li>"Best support I've ever seen! .. Five stars is not enough!"</li>
-			<li>"Thank you for your swift reply!"</li>
-			<li>"I am impressed by the speed of your answer :)"</li>
-			<li>"... customer service provided goes above and beyond ... An excellent experience from start to finish."</li>
-			<li>"Thanks a lot for your help - very quick!"</li>
-			<li>"... extreme fast response!!!"</li>
-			<li>"Wow, thanks for the prompt response."</li>
-			<li>"Excellent response time, man. Awesome service."</li>
-			<li>"... quick to respond and very helpful."</li>
-			<li>"... documentation [has] been a great help..."</li>
-			<li>"Thank you very much for the super-quick support."</li>
-			<li>"Thanks for such a speedy response! You rock man!"</li>
-		</ul>
-		
-		<p>
-		If you have any pre-sale questions, you can contact us directly through our ThemeForest profile, by emailing bonfirethemes[at]gmail.com or submitting your query on this template's comments section on ThemeForest.
-		</p>
-		
-		<p>
-		Thanks again, and do have fun browsing through the demo site!
-		</p>
-		
-		<!-- BEGIN BLOG BUTTON -->
-		<div class="center"><a href="blog-posts.php"><span class="buttonpink">Read the blog</span></a></div><br><br>
-		<!-- END BLOG BUTTON -->
-		
-		</div>
+				<?php echo $value->content ?>
+						
+			</div>
+			<hr>
+
+		<?php endforeach ?>
+
 		
 		<!-- END CONTENT -->
 		
