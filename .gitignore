@@ -1,0 +1,9 @@
+# ignore forder #
+###################
+.quarantine
+.tmb
+
+# ignore file #
+###################
+.DS_Store
+config.php
